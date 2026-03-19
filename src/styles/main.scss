@@ -1,4 +1,4 @@
-@import '../variables.';
+@import '../variables';
 
 $week: (
   'mon': 0,
@@ -29,7 +29,7 @@ body {
   gap: $day-gap;
 
   max-width: calc(
-    calc(2 * $day-padding) + calc(7 * $day-gap) + calc(7 * $day-width)
+    calc(2 * $day-padding) + calc(6 * $day-gap) + calc(7 * $day-width)
   );
   padding: $day-padding;
 
