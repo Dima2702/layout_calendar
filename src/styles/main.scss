@@ -1,3 +1,5 @@
+@import '../variables.';
+
 $week: (
   'mon': 0,
   'tue': 1,
@@ -13,6 +15,11 @@ body {
 }
 
 .page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -44,14 +51,14 @@ body {
     justify-content: center;
 
     box-sizing: border-box;
-    width: 100px;
-    height: 100px;
+    width: $day-width;
+    height: $day-height;
     border: 1px solid black;
 
     background-color: #eee;
 
     transition:
-      500ms ease,
+      transform 500ms ease,
       background-color 500ms ease;
 
     &:hover {
@@ -71,7 +78,7 @@ body {
   @each $day, $numb in $week {
     &--start-#{$day} {
       .calendar__day:nth-child(1) {
-        margin-left: calc($numb * 100 + $numb);
+        margin-left: calc(#{$numb} * (#{$day-width} + #{$day-gap}));
       }
     }
   }
